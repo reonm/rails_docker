@@ -1,26 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+①git clone
 
-Things you may want to cover:
+②docker build -t ruby-node:multi .でコンテナイメージをビルドする
 
-* Ruby version
+③docker-compose run web rails new . —force —no-deps —database=mysql
 
-* System dependencies
+ Docker-composeコマンドを使ってrails newを実行し、railsプロジェクトを作成する
+Railsが動くサービスにはwebという名前をdocker-compose.ymlでつけたのでコマンドでのコンテナ名としてはwebを当てはめます
 
-* Configuration
+④docker-compose run web rails db:create
 
-* Database creation
+Rails db:createコマンドをdocker-compose経由で実行してデータベースを作成する
 
-* Database initialization
+⑤docker-compose run web rails webpacker:install
 
-* How to run the test suite
+Rails 6系からは Webpacker が必要となっているため
+webコンテナ内に Webpacker をインストール
 
-* Services (job queues, cache servers, search engines, etc.)
+⑥docker-compose up -d
+コンテナを起動
 
-* Deployment instructions
-
-* ...
-# rails_docker
-# rails_docker
