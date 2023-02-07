@@ -1,6 +1,7 @@
 # README
 
 ①git clone
+
 ②docker build -t ruby-node:multi .でコンテナイメージをビルドする
 
 ③docker-compose run web rails new . —force —no-deps —database=mysql
@@ -20,6 +21,4 @@ webコンテナ内に Webpacker をインストール
 ⑥docker-compose up -d
 コンテナを起動
 
-* ...
-# rails_docker
-# rails_docker
+
